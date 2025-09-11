@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.links{
+    display: flex;
+    cursor: pointer;
+    margin-left: 1000px;
+    
+}
+.link-input{
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    width: 90%;
+    height: 5vh;
+    border: none;
+    background-color: #74C0FC;
+    border-radius: 20px;
+    padding: 20px;
+    opacity: 0.75;
+    margin: 30px;
+
+}
+
+.edit-icon{
+    width: 30px;
+    height: auto;
+    margin-left: -100px;
+    padding-top: 10px;
+    cursor: pointer;
+}
+.delete-icon{
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+}
