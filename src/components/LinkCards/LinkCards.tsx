@@ -8,7 +8,7 @@ interface Link {
   completed: boolean;
 }
 
-function LinkagePage() {
+function LinkCards() {
   const [links, setLinks] = useState<Link[]>([]);
   const [input, setInput] = useState("");
 
@@ -65,8 +65,8 @@ function LinkagePage() {
               onChange={() => toggleLink(link.id)}
             />
             <span>{link.text}</span>
-            <button onClick={() => editLink(link.id, prompt("Edit link:", link.text) || link.text)}>✏️</button>
-            <button onClick={() => deleteLink(link.id)}>🗑️</button>
+            <button onClick={() => editLink(link.id, prompt("Edit link:", link.text) || link.text)}>Edit</button>
+            <button onClick={() => deleteLink(link.id)}>Delete</button>
           </div>
         ))}
       </div>
@@ -74,4 +74,4 @@ function LinkagePage() {
   );
 }
 
-export default LinkagePage;
+export default LinkCards;
