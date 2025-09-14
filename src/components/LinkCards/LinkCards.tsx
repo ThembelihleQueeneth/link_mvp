@@ -2,8 +2,8 @@ import { useState } from "react";
 import styles from './LinkCards.module.css';
 import logo from '../../assets/linkage_logo.png';
 import darkmode from '../../assets/darkmode.svg';
-// import deletei from '../../assets/delete.svg';
-// import edit from '../../assets/edit.svg';
+import deletei from '../../assets/delete.svg';
+import edit from '../../assets/edit.svg';
 
 interface Link {
   id: number;
@@ -78,8 +78,10 @@ function LinkCards() {
               onChange={() => toggleLink(link.id)}
             />
             <span className={styles.itemText}>{link.text}</span>
-            <button onClick={() => editLink(link.id, prompt("Edit link:", link.text) || link.text)} className={styles.editButton}>Edit</button>
-            <button onClick={() => deleteLink(link.id)} className={styles.deleteButton}>Delete</button>
+            <div className={styles.actions}>
+              <button onClick={() => editLink(link.id, prompt("Edit link:", link.text) || link.text)} className={styles.editButton}> <img src={edit} alt="Edit" /></button>
+              <button onClick={() => deleteLink(link.id)} className={styles.deleteButton}> <img src={deletei} alt="Delete" /></button>
+            </div>
           </div>
         ))}
       </div>

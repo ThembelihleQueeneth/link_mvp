@@ -65,15 +65,13 @@
 .itemText{
   text-shadow: #000 4px 4px 4px;
   cursor: pointer;
+  font-size: 29px;
+  margin-left: 20px;
 }
 .editButton, .deleteButton {
-  width: 80px;
-  height: auto;
-  margin-left: 10px;
+  background: none;
   border: none;
-  border: 1px solid blue;
-  border-radius: 12px;
-  cursor: pointer;
+  cursor: pointer; 
 }
 .dark {
   background-color: #121212;
@@ -92,6 +90,19 @@
 }
 .dark .header{
   background-color: #0C2340;
+}
+.actions{
+  display: flex;
+  margin-left: 600px;
+  margin-top: -40px;
+}
+.editButton img,
+.deleteButton img {
+  width: 60px;
+  height: 60px;
+  pointer-events: none;
+  
+ 
 }
 
 
