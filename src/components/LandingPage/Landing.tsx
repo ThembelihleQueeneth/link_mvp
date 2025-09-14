@@ -9,10 +9,11 @@ export const Landing = () => {
   return (
     // logo
     <div className={styles.landingContainer}>
-      <img src={logo} alt="Logo"  className={styles.logo}/>
+     
 
       {/* Card */}
       <div className={styles.card}>
+         <img src={logo} alt="Logo"  className={styles.logo}/>
         <h2>Welcome to Linkage</h2>
         <p>
           Linkage will help you <br />

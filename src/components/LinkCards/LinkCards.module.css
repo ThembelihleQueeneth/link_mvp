@@ -1,78 +1,77 @@
-.linkage-container {
+linkage-container{
+  background-color: #fff;
+
+}
+.header{
+  background-color: #74C0FC;
+  width: 100%;
+  height: auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 40px auto;
-  max-width: 350px;
+  justify-content: space-between;
+}
+.logo, .darkmode{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 10px;
+}
+.input-box input{
+  width: 80%;
+  height: 5vh;
   padding: 20px;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  background: #4da6ff;
-  border-radius: 16px 16px 0 0;
-  padding: 10px;
-  color: black;
-  font-weight: bold;
-}
-
-.logo {
-  margin-right: 10px;
-  font-size: 1.4rem;
-}
-
-.input-box {
-  display: flex;
-  align-items: center;
-  margin: 15px 0;
-  width: 100%;
-}
-
-.input-box input {
-  flex: 1;
-  padding: 10px;
+  margin-top: 20px;
+  margin-left: 100px;
+  border: none;
+  background-color: #fff;
   border-radius: 20px;
-  border: 1px solid #ddd;
-  margin-right: 8px;
+  color: #000;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.9);
+  
 }
 
-.input-box button {
-  background: #4da6ff;
+.addButton{
+  width: 60px;
+  height: 60px;
   border: none;
   border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  color: white;
-  font-size: 1.2rem;
+  background-color: #74C0FC;
+  margin-left: -80px;
+  color: #fff;
+  font-size: 2rem;
   cursor: pointer;
 }
-
-.list {
-  width: 100%;
+.addButton:hover{
+  background-color: #0e2c42;
+  cursor: pointer;
 }
-
-.item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #e6f3ff;
-  padding: 10px;
-  margin-bottom: 10px;
+#list{
+  width: 80%;
+  height: 5vh;
+  padding: 20px;
+  margin-top: 20px;
+  margin-left: 100px;
+  border: none;
+  background-color: #74C0FC;
+  opacity: 0.8;
   border-radius: 20px;
+  color: #000;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.9);
 }
-
-.item.done span {
-  text-decoration: line-through;
-  opacity: 0.7;
+.list input{
+  width: 20px;
+  height: 20px;
+  background-color: red
 }
-
-.item span {
-  flex: 1;
-  margin: 0 10px;
+.itemText{
+  text-shadow: #000 4px 4px 4px;
+  cursor: pointer;
+}
+.editButton, .deleteButton {
+  width: 80px;
+  height: auto;
+  margin-left: 10px;
+  border: none;
+  border: 1px solid blue;
+  border-radius: 12px;
+  cursor: pointer;
 }

@@ -1,6 +1,9 @@
 import { useState } from "react";
-import styles from './LinkCards.module.css'
-import logo from '../../assets/linkage_logo.png'
+import styles from './LinkCards.module.css';
+import logo from '../../assets/linkage_logo.png';
+import darkmode from '../../assets/darkmode.svg';
+import deletei from '../../assets/delete.svg';
+import edit from '../../assets/edit.svg';
 
 interface Link {
   id: number;
@@ -44,6 +47,7 @@ function LinkCards() {
       <div className={styles.header}>
         <img src={logo} alt="Logo" className={styles['logo']}/>
         <h1>Linkage</h1>
+        <img src={darkmode} alt="Dark Mode" className={styles['darkmode']}/>
       </div>
 
       <div className={styles["input-box"]}>
@@ -53,23 +57,25 @@ function LinkCards() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
-        <button onClick={addLink}>+</button>
+        <button className={styles.addButton} onClick={addLink}>+</button>
       </div>
 
-      <div className="list">
+      <div className="list" id={styles.list}>
         {links.map((link) => (
-          <div key={link.id} className={`item ${link.completed ? "done" : ""}`}>
+          <div key={link.id}  className={`item ${link.completed ? "done" : ""}`}>
             <input
               type="checkbox"
               checked={link.completed}
               onChange={() => toggleLink(link.id)}
             />
-            <span>{link.text}</span>
-            <button onClick={() => editLink(link.id, prompt("Edit link:", link.text) || link.text)}>Edit</button>
-            <button onClick={() => deleteLink(link.id)}>Delete</button>
+            <span className={styles.itemText}>{link.text}</span>
+            <button onClick={() => editLink(link.id, prompt("Edit link:", link.text) || link.text)} className={styles.editButton}>Edit</button>
+            <button onClick={() => deleteLink(link.id)} className={styles.deleteButton}>Delete</button>
           </div>
         ))}
       </div>
+
+      {/* <button onClick={addLink}>+</button> */}
     </div>
   );
 }

@@ -20,7 +20,8 @@
   box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
   text-align: center;
   max-width: 250px;
-  
+  margin: 20px auto;
+
 }
 
 .card h2 {
@@ -36,7 +37,7 @@
 
 .btn {
   padding: 8px 14px;
-  background: #4da6ff;
+  background: #74C0FC;
   border: none;
   border-radius: 6px;
   color: white;
@@ -46,5 +47,5 @@
 }
 
 .btn:hover {
-  background: #1a8cff;
+  background: #74C0FC;
 }
