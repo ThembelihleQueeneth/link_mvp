@@ -2,8 +2,8 @@ import { useState } from "react";
 import styles from './LinkCards.module.css';
 import logo from '../../assets/linkage_logo.png';
 import darkmode from '../../assets/darkmode.svg';
-import deletei from '../../assets/delete.svg';
-import edit from '../../assets/edit.svg';
+// import deletei from '../../assets/delete.svg';
+// import edit from '../../assets/edit.svg';
 
 interface Link {
   id: number;
@@ -42,12 +42,21 @@ function LinkCards() {
     );
   };
 
+  const [darkMode, setDarkMode] = useState(false);
+
+
   return (
-    <div className={styles["linkage-container"]}>
+    <div className={`${styles["linkage-container"]} ${darkMode ? styles.dark : ""}`}>
       <div className={styles.header}>
         <img src={logo} alt="Logo" className={styles['logo']}/>
         <h1>Linkage</h1>
-        <img src={darkmode} alt="Dark Mode" className={styles['darkmode']}/>
+       <img 
+  src={darkmode} 
+  alt="Dark Mode" 
+  className={styles['darkmode']} 
+  onClick={() => setDarkMode(!darkMode)}
+/>
+
       </div>
 
       <div className={styles["input-box"]}>
