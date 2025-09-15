@@ -1,69 +1,62 @@
-# React + TypeScript + Vite
+📌 Favorite Links App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React + TypeScript application that allows users to store, organize, and manage their favorite links in one place.
 
-Currently, two official plugins are available:
+🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+➕ Add new links with a title and URL
 
-## Expanding the ESLint configuration
+📋 View a list of all saved links
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🗑️ Delete links you no longer need
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+✏️ Edit existing links
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+💾 Data persistence (optional: stored in localStorage or backend if connected)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+⚡ Built with React + TypeScript for type safety and scalability
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+🛠️ Tech Stack
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Frontend: React, TypeScript
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Styling: CSS (or add Tailwind/Bootstrap if you used it)
+
+Storage: LocalStorage (or update if you used a database)
+
+📂 Project Structure
+link_mvp/
+│── public/          # Static files  
+│── src/  
+│   ├── components/  # Reusable UI components  
+│   ├── pages/       # App pages (if applicable)  
+│   ├── App.tsx      # Root component  
+│   ├── index.tsx    # Entry point  
+│── package.json  
+│── tsconfig.json  
+│── README.md  
+
+⚙️ Installation & Setup
+
+Clone the repository
+
+git clone https://github.com/ThembelihleQueeneth/link_mvp.git
+
+
+Install dependencies
+
+npm install
+
+
+Run the development server
+
+npm start
+
+
+Build for production
+
+npm run build
+
+🧑‍💻 Author
+
+Created by Thembelihle Maluka 
