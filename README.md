@@ -20,18 +20,18 @@ A simple React + TypeScript application that allows users to store, organize, an
 
 Frontend: React, TypeScript
 
-Styling: CSS (or add Tailwind/Bootstrap if you used it)
+Styling: CSS 
 
-Storage: LocalStorage (or update if you used a database)
+Storage: LocalStorage
 
 📂 Project Structure
 link_mvp/
-│── public/          # Static files  
+│── public/          
 │── src/  
-│   ├── components/  # Reusable UI components  
-│   ├── pages/       # App pages (if applicable)  
-│   ├── App.tsx      # Root component  
-│   ├── index.tsx    # Entry point  
+│   ├── components/ 
+│   ├── pages/      
+│   ├── App.tsx     
+│   ├── index.tsx   
 │── package.json  
 │── tsconfig.json  
 │── README.md  
