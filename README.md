@@ -1,60 +1,177 @@
-# LinkKeeper
+#  LinkKeeper
 
-LinkKeeper is a simple, elegant React application designed to help you save, manage, and access your important links. Never lose track of a useful URL again!
+**LinkKeeper** is a simple and elegant **React application** that helps you **save, organize, and quickly access your important links**.
+Never lose track of a useful URL again!
 
-## Features
+Whether it's documentation, tools, learning resources, or favorite websites, LinkKeeper keeps them all in one place.
 
-- **Add Links:** Save any URL with a custom name for easy identification.
-- **Edit Links:** Update the name or URL of any previously saved link.
-- **Delete Links:** Remove links you no longer need.
-- **Copy to Clipboard:** Quickly copy a saved link's URL to your clipboard with a single click.
-- **Open in New Tab:** Launch any saved link directly in a new browser tab.
-- **Persistent Storage:** Your links are securely saved in your browser's local storage, meaning they'll still be there even after you refresh or close the page.
-- **Loading State:** Features a sleek loading animation while retrieving your saved data.
+---
 
-## Tech Stack
+#  Preview
 
-- **Frontend Framework:** React
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS (for responsive and modern UI)
-- **Icons:** Lucide React
-- **Build Tool:** Vite
+![linkKeeper](https://github.com/user-attachments/assets/9f7f012b-1c79-4cd2-89d5-c97dbaf7d939)
 
-## Getting Started
+---
 
-Follow these instructions to get a copy of the project up and running on your local machine.
+#  Features
 
-### Prerequisites
+*  **Add Links**
+  Save any URL with a custom name for easy identification.
 
-You need to have Node.js and npm installed on your computer.
+*  **Edit Links**
+  Update the name or URL of previously saved links.
 
-### Installation
+*  **Delete Links**
+  Remove links you no longer need.
 
-1. Clone the repository or download the source code.
-2. Navigate to the project directory:
-   ```bash
-   cd link_mvp
-   ```
-3. Install the required dependencies:
-   ```bash
-   npm install
-   ```
+*  **Copy to Clipboard**
+  Quickly copy a saved link’s URL with a single click.
 
-### Running the Application
+*  **Open in New Tab**
+  Launch any saved link directly in a new browser tab.
 
-To start the development server, run the following command:
+*  **Persistent Storage**
+  Links are stored in **localStorage**, so they remain even after refreshing or closing the browser.
+
+*  **Loading State**
+  Displays a smooth loading animation when retrieving saved links.
+
+---
+
+#  Tech Stack
+
+| Technology       | Purpose                                |
+| ---------------- | -------------------------------------- |
+| **React**        | Frontend framework                     |
+| **TypeScript**   | Type-safe JavaScript                   |
+| **Tailwind CSS** | Modern responsive styling              |
+| **Lucide React** | Beautiful icons                        |
+| **Vite**         | Fast build tool and development server |
+
+---
+
+#  Project Structure
+
+```
+link_mvp
+│
+├── public
+│   └── assets
+│
+├── src
+│   ├── components
+│   ├── hooks
+│   ├── types
+│   ├── App.tsx
+│   └── main.tsx
+│
+├── package.json
+├── tailwind.config.js
+├── tsconfig.json
+└── README.md
+```
+
+---
+
+#  Getting Started
+
+Follow these instructions to run the project locally.
+
+##  Prerequisites
+
+Make sure you have the following installed:
+
+* **Node.js** (v16 or higher recommended)
+* **npm** or **yarn**
+
+Download Node.js here:
+[https://nodejs.org](https://nodejs.org)
+
+---
+
+#  Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/linkkeeper.git
+```
+
+Navigate to the project folder:
+
+```bash
+cd link_mvp
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+---
+
+#  Running the Application
+
+Start the development server:
 
 ```bash
 npm run dev
 ```
 
-This will typically start the application on `http://localhost:5173/`. Open this URL in your browser to start using LinkKeeper!
+The app will run at:
 
-## Usage
+```
+http://localhost:5173
+```
 
-1. **Saving a link:** Enter a "Link name" and a "URL" (e.g., https://example.com) into the input fields at the top, then click the **"+ Save"** button.
-2. **Managing your links:** Use the action icons located on the right side of each saved link to:
-   - 📋 Copy the URL
-   - ✏️ Edit the link's details
-   - 🗑️ Delete the link
-   - 🔗 Open in a new tab
+Open this URL in your browser.
+
+---
+
+#  Usage Guide
+
+### Saving a Link
+
+1. Enter a **Link Name**
+2. Enter a **URL** (example: `https://example.com`)
+3. Click **+ Save**
+
+---
+
+### Managing Links
+
+Each saved link has action buttons:
+
+| Icon | Action               |
+| ---- | -------------------- |
+| 📋   | Copy link URL        |
+| ✏️   | Edit link            |
+| 🗑️  | Delete link          |
+| 🔗   | Open link in new tab |
+
+---
+
+#  Future Improvements
+
+Potential features to add:
+
+*  Search links
+*  Tag or categorize links
+*  Cloud storage (Supabase / Firebase)
+*  Mobile responsive improvements
+*  Dark mode
+*  User authentication
+
+#  License
+
+This project is licensed under the **MIT License**.
+
+---
+
+#  Author
+
+Developed by **Thembelihle Maluka**
+
+*  Aspiring Full Stack Developer
+*  React | Node.js | TypeScript
