@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 type Link = {
   name: string;
@@ -6,9 +6,16 @@ type Link = {
 };
 
 function App() {
+  const [links, setLinks] = useState<Link[]>(() => {
+    const saved = localStorage.getItem("links");
+    return saved ? JSON.parse(saved) : [];
+  });
   const [name, setName] = useState("");
   const [url, setUrl] = useState("");
-  const [links, setLinks] = useState<Link[]>([]);
+
+  useEffect(() => {
+    localStorage.setItem("links", JSON.stringify(links));
+  }, [links]);
 
   const addLink = () => {
     if (!name || !url) return;
