@@ -94,7 +94,7 @@ Download Node.js here:
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/linkkeeper.git
+     https://github.com/ThembelihleQueeneth/link_mvp.git
 ```
 
 Navigate to the project folder:
