@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-
+import logo from './assets/logo.avif'
+import { Copy, Edit, Trash2, ExternalLink } from "lucide-react";
 type Link = {
   name: string;
   url: string;
@@ -12,6 +13,7 @@ function App() {
   });
   const [name, setName] = useState("");
   const [url, setUrl] = useState("");
+  const [editingIndex, setEditingIndex] = useState<number | null>(null);
 
   useEffect(() => {
     localStorage.setItem("links", JSON.stringify(links));
@@ -20,17 +22,48 @@ function App() {
   const addLink = () => {
     if (!name || !url) return;
 
-    const newLink = { name, url };
-    setLinks([...links, newLink]);
+    if (editingIndex !== null) {
+      const updatedLinks = [...links];
+      updatedLinks[editingIndex] = { name, url };
+      setLinks(updatedLinks);
+      setEditingIndex(null);
+    } else {
+      const newLink = { name, url };
+      setLinks([...links, newLink]);
+    }
 
     setName("");
     setUrl("");
+  };
+
+  const deleteLink = (index: number) => {
+    setLinks(links.filter((_, i) => i !== index));
+    if (editingIndex === index) {
+      setEditingIndex(null);
+      setName("");
+      setUrl("");
+    }
+  };
+
+  const startEdit = (index: number) => {
+    setEditingIndex(index);
+    setName(links[index].name);
+    setUrl(links[index].url);
+  };
+
+  const copyLink = async (url: string) => {
+    try {
+      await navigator.clipboard.writeText(url);
+    } catch (err) {
+      console.error('Failed to copy', err);
+    }
   };
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center pt-20">
 
       <h1 className="text-4xl font-bold mb-2">LinkKeeper</h1>
+      <img src={logo} alt="logo" className="w-10 h-10 border rounded-full " />
       <p className="text-gray-500 mb-10">
         Save your links. Never lose them again.
       </p>
@@ -55,7 +88,7 @@ function App() {
           onClick={addLink}
           className="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600"
         >
-          + Save
+          {editingIndex !== null ? "Update" : "+ Save"}
         </button>
 
       </div>
@@ -70,17 +103,44 @@ function App() {
             {links.map((link, index) => (
               <li
                 key={index}
-                className="bg-white p-4 rounded-lg shadow flex justify-between"
+                className="bg-white p-4 rounded-lg shadow flex items-center justify-between gap-4"
               >
-                <span>{link.name}</span>
+                <div className="flex flex-col min-w-0 flex-1">
+                  <span className="font-medium text-gray-800 truncate">{link.name}</span>
+                  <span className="text-gray-500 text-sm truncate">{link.url}</span>
+                </div>
 
-                <a
-                  href={link.url}
-                  target="_blank"
-                  className="text-blue-500"
-                >
-                  Open
-                </a>
+                <div className="flex items-center gap-1 flex-shrink-0">
+                  <button
+                    onClick={() => copyLink(link.url)}
+                    className="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-md transition-colors"
+                    title="Copy Link"
+                  >
+                    <Copy size={18} />
+                  </button>
+                  <button
+                    onClick={() => startEdit(index)}
+                    className="p-2 text-blue-500 hover:text-blue-700 hover:bg-blue-50 rounded-md transition-colors"
+                    title="Edit Link"
+                  >
+                    <Edit size={18} />
+                  </button>
+                  <button
+                    onClick={() => deleteLink(index)}
+                    className="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-md transition-colors"
+                    title="Delete Link"
+                  >
+                    <Trash2 size={18} />
+                  </button>
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    className="p-2 text-green-500 hover:text-green-700 hover:bg-green-50 rounded-md transition-colors inline-block"
+                    title="Open Link"
+                  >
+                    <ExternalLink size={18} />
+                  </a>
+                </div>
               </li>
             ))}
           </ul>
@@ -92,3 +152,6 @@ function App() {
 }
 
 export default App;
+
+
+
