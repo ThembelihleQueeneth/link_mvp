@@ -1,23 +1,34 @@
 import { useState, useEffect } from "react";
 import logo from './assets/logo.avif'
-import { Copy, Edit, Trash2, ExternalLink } from "lucide-react";
+import { Copy, Edit, Trash2, ExternalLink, Loader2 } from "lucide-react";
 type Link = {
   name: string;
   url: string;
 };
 
 function App() {
-  const [links, setLinks] = useState<Link[]>(() => {
-    const saved = localStorage.getItem("links");
-    return saved ? JSON.parse(saved) : [];
-  });
+  const [links, setLinks] = useState<Link[]>([]);
   const [name, setName] = useState("");
   const [url, setUrl] = useState("");
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    localStorage.setItem("links", JSON.stringify(links));
-  }, [links]);
+    const timer = setTimeout(() => {
+      const saved = localStorage.getItem("links");
+      if (saved) {
+        setLinks(JSON.parse(saved));
+      }
+      setIsLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (!isLoading) {
+      localStorage.setItem("links", JSON.stringify(links));
+    }
+  }, [links, isLoading]);
 
   const addLink = () => {
     if (!name || !url) return;
@@ -94,7 +105,12 @@ function App() {
       </div>
 
       <div className="w-[500px]">
-        {links.length === 0 ? (
+        {isLoading ? (
+          <div className="flex justify-center items-center py-10">
+            <Loader2 className="animate-spin text-orange-500" size={40} />
+            <span className="ml-3 text-gray-500 font-medium">Loading links...</span>
+          </div>
+        ) : links.length === 0 ? (
           <p className="text-gray-400 text-center">
             No links saved yet. Add your first one above!
           </p>
