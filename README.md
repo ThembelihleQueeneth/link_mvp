@@ -1,62 +1,60 @@
-📌 Favorite Links App
+# LinkKeeper
 
-A simple React + TypeScript application that allows users to store, organize, and manage their favorite links in one place.
+LinkKeeper is a simple, elegant React application designed to help you save, manage, and access your important links. Never lose track of a useful URL again!
 
-🚀 Features
+## Features
 
-➕ Add new links with a title and URL
+- **Add Links:** Save any URL with a custom name for easy identification.
+- **Edit Links:** Update the name or URL of any previously saved link.
+- **Delete Links:** Remove links you no longer need.
+- **Copy to Clipboard:** Quickly copy a saved link's URL to your clipboard with a single click.
+- **Open in New Tab:** Launch any saved link directly in a new browser tab.
+- **Persistent Storage:** Your links are securely saved in your browser's local storage, meaning they'll still be there even after you refresh or close the page.
+- **Loading State:** Features a sleek loading animation while retrieving your saved data.
 
-📋 View a list of all saved links
+## Tech Stack
 
-🗑️ Delete links you no longer need
+- **Frontend Framework:** React
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS (for responsive and modern UI)
+- **Icons:** Lucide React
+- **Build Tool:** Vite
 
-✏️ Edit existing links
+## Getting Started
 
-💾 Data persistence (optional: stored in localStorage or backend if connected)
+Follow these instructions to get a copy of the project up and running on your local machine.
 
-⚡ Built with React + TypeScript for type safety and scalability
+### Prerequisites
 
-🛠️ Tech Stack
+You need to have Node.js and npm installed on your computer.
 
-Frontend: React, TypeScript
+### Installation
 
-Styling: CSS 
+1. Clone the repository or download the source code.
+2. Navigate to the project directory:
+   ```bash
+   cd link_mvp
+   ```
+3. Install the required dependencies:
+   ```bash
+   npm install
+   ```
 
-Storage: LocalStorage
+### Running the Application
 
-📂 Project Structure
-link_mvp/
-│── public/          
-│── src/  
-│   ├── components/ 
-│   ├── pages/      
-│   ├── App.tsx     
-│   ├── index.tsx   
-│── package.json  
-│── tsconfig.json  
-│── README.md  
+To start the development server, run the following command:
 
-⚙️ Installation & Setup
+```bash
+npm run dev
+```
 
-Clone the repository
+This will typically start the application on `http://localhost:5173/`. Open this URL in your browser to start using LinkKeeper!
 
-git clone https://github.com/ThembelihleQueeneth/link_mvp.git
+## Usage
 
-
-Install dependencies
-
-npm install
-
-
-Run the development server
-
-npm start
-
-
-Build for production
-
-npm run build
-
-🧑‍💻 Author
-
-Created by Thembelihle Maluka 
+1. **Saving a link:** Enter a "Link name" and a "URL" (e.g., https://example.com) into the input fields at the top, then click the **"+ Save"** button.
+2. **Managing your links:** Use the action icons located on the right side of each saved link to:
+   - 📋 Copy the URL
+   - ✏️ Edit the link's details
+   - 🗑️ Delete the link
+   - 🔗 Open in a new tab
